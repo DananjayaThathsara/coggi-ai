@@ -54,7 +54,8 @@ const clientBuildPath = path.join(__dirname, "../client/dist");
 app.use(express.static(clientBuildPath));
 
 // Regex catch-all avoids Express 5 “path-to-regexp” bug
-app.get(/.*/, (req, res) => {
+// Catch-all *only* for non-API requests
+app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
 });
 
