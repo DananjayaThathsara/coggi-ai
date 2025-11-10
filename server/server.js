@@ -26,11 +26,17 @@ app.use(cors());
 app.use(express.json());
 
 // API Routes
-app.get("/", (req, res) => res.send("Server is Live!"));
-app.use("/api/user", userRouter);
-app.use("/api/chat", chatRouter);
-app.use("/api/message", messageRouter);
-app.use("/api/credit", creditRouter);
+try {
+   app.get("/", (req, res) => res.send("Server is Live!"));
+   app.use("/api/user", userRouter);
+   app.use("/api/chat", chatRouter);
+   app.use("/api/message", messageRouter);
+   app.use("/api/credit", creditRouter); 
+   console.log('all routes loaded')
+} catch (error) {
+    console.log("route load error", error);
+}
+
 
 const PORT = process.env.PORT || 3000;
 
