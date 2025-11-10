@@ -29,6 +29,11 @@ app.post(
 app.use(cors());
 app.use(express.json());
 
+// Simple health check for API
+app.get('/api', (req, res) => {
+  res.json({ ok: true, service: 'backend', version: '1.0', time: new Date().toISOString() });
+});
+
 // ─────────────────────────────
 // 3. API routes
 // ─────────────────────────────
