@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="193" height="46" viewBox="0 0 193 46">
+      
+    <g transform="translate(6,6)" stroke="#007BFF" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="34" height="34" rx="8.16" />
+      <path d="M6.12 11.899999999999999 H14.96" />
+      <circle cx="6.12" cy="11.899999999999999" r="2.21" fill="#007BFF"/>
+      <path d="M19.040000000000003 11.899999999999999 H27.88" />
+      <circle cx="27.88" cy="11.899999999999999" r="2.21" fill="#007BFF"/>
+      <path d="M17.0 6.12 V27.88" />
+      <path d="M6.12 24.48 H12.92" />
+      <circle cx="6.12" cy="24.48" r="2.21" fill="#007BFF"/>
+      <path d="M21.08 24.48 H27.88" />
+      <circle cx="27.88" cy="24.48" r="2.21" fill="#007BFF"/>
+    </g>
+    
+      <text x="50" y="26" font-family="Poppins, Inter, sans-serif" font-weight="700" font-size="21" fill="#007BFF" letter-spacing="0.2">MovaAI</text>
+      <text x="50" y="39" font-family="Poppins, Inter, sans-serif" font-weight="400" font-size="9" fill="#333333" letter-spacing="0.1">Powering Smarter Decisions</text>
+    </svg>
