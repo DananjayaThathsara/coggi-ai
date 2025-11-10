@@ -59,24 +59,27 @@ export const purchasePlan = async (req, res) =>{
          const {origin} = req.headers;
 
          const session = await stripe.checkout.sessions.create({
-            line_items: [
-                {
-                price_data: {
-                    currency: "usd",
-                    unit_amount: plan.price * 100,
-                    product_data: {
-                        name: plan.name
-                    }
-                },
-                quantity: 1,
-                },
-            ],
-            mode: 'payment',
-            success_url: `${origin}/loading`,
-            cancel_url: `${origin}`,
-            metadata: {transactionId: transaction._id.toString(), appId: 'movaai'},
-            expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // Expires in 30 minutes
-            });
+           line_items: [
+             {
+               price_data: {
+                 currency: "usd",
+                 unit_amount: plan.price * 100,
+                 product_data: {
+                   name: plan.name,
+                 },
+               },
+               quantity: 1,
+             },
+           ],
+           mode: "payment",
+           success_url: `${origin}/loading`,
+           cancel_url: `${origin}`,
+           metadata: {
+             transactionId: transaction._id.toString(),
+             appId: "coggiai",
+           },
+           expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // Expires in 30 minutes
+         });
 
             res.json({success: true, url: session.url})
 

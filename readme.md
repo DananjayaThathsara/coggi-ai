@@ -1,6 +1,6 @@
-# 🧠 MovaAI
+# 🧠 CoggiAI
 
-MovaAI is an intelligent, AI-powered chat platform built with **React**, **Express.js**, **Node.js**, and **MongoDB**.  
+CoggiAI is an intelligent, AI-powered chat platform built with **React**, **Express.js**, **Node.js**, and **MongoDB**.  
 It provides real-time chat, user authentication, and smart assistant capabilities — designed for scalability, modularity, and modern development workflows.
 
 ## 🚀 Features
