@@ -30,26 +30,17 @@ app.use(cors());
 app.use(express.json());
 
 // Simple health check for API
-app.get('/api', (req, res) => {
-  res.json({ ok: true, service: 'backend', version: '1.0', time: new Date().toISOString() });
+app.get("/api", (req, res) => {
+  res.json({
+    ok: true,
+    service: "backend",
+    version: "1.0",
+    time: new Date().toISOString(),
+  });
 });
 
 // ─────────────────────────────
-// 3. API routes
-// ─────────────────────────────
-try {
-  app.get("/api", (req, res) => res.send("Api Server is Live!"));
-  app.use("/api/user", userRouter);
-  app.use("/api/chat", chatRouter);
-  app.use("/api/message", messageRouter);
-  app.use("/api/credit", creditRouter);
-  
-} catch (error) {
-  console.error("Route load error:", error);
-}
-
-// ─────────────────────────────
-// 4. Serve React build *after* API routes
+// 3. Serve React build *after* API routes
 // ─────────────────────────────
 const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
@@ -63,6 +54,18 @@ app.use(express.static(clientBuildPath));
 app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
 });
+
+// ─────────────────────────────
+// 4. API routes
+// ─────────────────────────────
+try {
+  app.use("/api/user", userRouter);
+  app.use("/api/chat", chatRouter);
+  app.use("/api/message", messageRouter);
+  app.use("/api/credit", creditRouter);
+} catch (error) {
+  console.error("Route load error:", error);
+}
 
 // ─────────────────────────────
 // 5. Start server
