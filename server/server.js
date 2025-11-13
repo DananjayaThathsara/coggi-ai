@@ -38,7 +38,7 @@ app.get('/api', (req, res) => {
 // 3. API routes
 // ─────────────────────────────
 try {
-  app.get("/", (req, res) => res.send("Server is Live!"));
+  app.get("/api", (req, res) => res.send("Api Server is Live!"));
   app.use("/api/user", userRouter);
   app.use("/api/chat", chatRouter);
   app.use("/api/message", messageRouter);
